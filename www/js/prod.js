@@ -3088,7 +3088,7 @@ class PlayerManagement {
       }
 
       const settings = {
-        licenseKey: 'cGtlZWpjbHFxaUAxNTM2ODI2',
+        licenseKey: 'your-license-key',
         src: src,
         autoplay: true,
         hideModule: {

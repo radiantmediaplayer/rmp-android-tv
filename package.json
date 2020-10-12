@@ -7,9 +7,6 @@
     "type": "git",
     "url": "git+https://github.com/radiantmediaplayer/rmp-android-tv.git"
   },
-  "scripts": {
-    "prepare": "browserify www/js/index.js -o www/js/prod.js -t [ babelify ] -v && cordova prepare android"
-  },
   "engines": {
     "cordovaDependencies": {
       "1.0.0": {
