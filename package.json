@@ -10,6 +10,13 @@
   "scripts": {
     "prepare": "browserify www/js/index.js -o www/js/prod.js -t [ babelify ] -v && cordova prepare android"
   },
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova-android": ">=9.0.0"
+      }
+    }
+  },
   "main": "www/index.html",
   "keywords": [
     "ecosystem:cordova",

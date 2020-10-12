@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.radiantmediaplayer.rmp-android-tv" version="1.0.0"
+<widget id="com.radiantmediaplayer.rmpandroidtv" version="1.0.0"
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>rmp-android-tv</name>
@@ -9,6 +9,11 @@ A sample Apache Cordova application for Android TV using Radiant Media Player
     <author email="support@radiantmediaplayer.com" href="https://www.radiantmediaplayer.com/">
 Radiant Media Player
     </author>
+    <keywords>cordova,cordova-android,android-tv,android,html5,video</keywords>
+    <license>MIT</license>
+    <engines>
+        <engine name="cordova" version=">=9.0.0" />
+    </engines>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
