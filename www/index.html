@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src * blob: http: https: file: data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+  style-src * http: https: file: 'unsafe-inline';
+  img-src * http: https: file: data: android-webview-video-poster:;">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Hello RMP and Cordova for Android TV</title>
+</head>
+
+<body>
+  <div id="rmpPlayer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Radiant Media Player</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <img src="img/android_tv.png" width="32" alt="Android TV logo">
+        <strong>Android TV Demo App</strong>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Select a player</h3>
+        <ul>
+          <li><a href="#" id="liveHls">HLS live player</a></li>
+          <li><a href="#" id="vodHls">HLS VOD player</a></li>
+          <li><a href="#" id="liveDash">DASH live player</a></li>
+          <li><a href="#" id="vodDash">DASH VOD player</a></li>
+          <li><a href="#" id="vodDashDrm">DASH VOD with Widevine DRM player</a></li>
+          <!--<li><a href="#" id="vodHlsAdsIma">HLS VOD player with IMA ads</a></li>-->
+          <li><a href="#" id="vodHlsAdsRmpVast">HLS VOD player with rmp-vast ads</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="cordova.js"></script>
+  <script src="https://cdn.radiantmediatechs.com/rmp/5.10.2/js/rmp.debug.js"></script>
+  <script src="js/prod.js"></script>
+</body>
+
+</html>
