@@ -1,6 +1,6 @@
 {
   "name": "rmp-android-tv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Radiant Media Player <support@radiantmediaplayer.com>",
   "description": "A sample Apache Cordova application for Android TV using Radiant Media Player",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "engines": {
     "cordovaDependencies": {
-      "1.0.0": {
+      "1.0.1": {
         "cordova-android": ">=9.0.0"
       }
     }
