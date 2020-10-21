@@ -27,13 +27,6 @@ const app = {
       window.console.log(e);
     });
 
-    // needed when using cordova-plugin-rmpandroidtv to display in native resolution on Android TV
-    const metaViewportElement = document.querySelector('meta[name="viewport"]');
-    if (metaViewportElement !== null) {
-      const metaViewPortContent = `user-scalable=no, width=device-width, initial-scale=${1 / window.devicePixelRatio}, viewport-fit=cover`;
-      metaViewportElement.setAttribute('content', metaViewPortContent);
-    }
-
     const mainInterface = new MainInterface(true);
     mainInterface.wire();
     const playerManagement = new PlayerManagement(true, mainInterface);
@@ -44,8 +37,10 @@ const app = {
       document.getElementById('vodHls'),
       document.getElementById('liveDash'),
       document.getElementById('vodDash'),
+      document.getElementById('vodDashVP9'),
       document.getElementById('vodDashDrm'),
-      //document.getElementById('vodHlsAdsIma'),
+      document.getElementById('vodDashDrm2'),
+      document.getElementById('vodHlsAdsIma'),
       document.getElementById('vodHlsAdsRmpVast')
     ];
 

@@ -1,6 +1,6 @@
 {
   "name": "rmp-android-tv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Radiant Media Player <support@radiantmediaplayer.com>",
   "description": "A sample Apache Cordova application for Android TV using Radiant Media Player",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "engines": {
     "cordovaDependencies": {
-      "1.0.1": {
+      "1.0.2": {
         "cordova-android": ">=9.0.0"
       }
     }
@@ -31,11 +31,11 @@
   "homepage": "https://www.radiantmediaplayer.com/docs/latest/android-tv.html",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/runtime-corejs3": "^7.11.2",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/runtime-corejs3": "^7.12.1",
     "babelify": "^10.0.0",
     "cordova-android": "^9.0.0",
     "cordova-plugin-rmpandroidtv": "git+https://github.com/radiantmediaplayer/cordova-plugin-rmpandroidtv.git",

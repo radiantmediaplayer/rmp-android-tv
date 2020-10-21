@@ -6,6 +6,13 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <script>
+    const metaViewportElement = document.querySelector('meta[name="viewport"]');
+    if (metaViewportElement !== null) {
+      const metaViewPortContent = `user-scalable=no, width=device-width, initial-scale=${1 / window.devicePixelRatio}, viewport-fit=cover`;
+      metaViewportElement.setAttribute('content', metaViewPortContent);
+    }
+  </script>
   <meta http-equiv="Content-Security-Policy" content="
   default-src * blob: http: https: file: data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
   style-src * http: https: file: 'unsafe-inline';
@@ -38,7 +45,9 @@
           <li><a href="#" id="vodHls">HLS VOD player</a></li>
           <li><a href="#" id="liveDash">DASH live player</a></li>
           <li><a href="#" id="vodDash">DASH VOD player</a></li>
+          <li><a href="#" id="vodDashVP9">DASH VOD VP9 player</a></li>
           <li><a href="#" id="vodDashDrm">DASH VOD with Widevine DRM player</a></li>
+          <li><a href="#" id="vodDashDrm2">DASH VOD with Widevine DRM player Sample 2</a></li>
           <li><a href="#" id="vodHlsAdsIma">HLS VOD player with IMA ads</a></li>
           <li><a href="#" id="vodHlsAdsRmpVast">HLS VOD player with rmp-vast ads</a></li>
         </ul>
@@ -46,7 +55,7 @@
     </div>
   </div>
   <script src="cordova.js"></script>
-  <script src="https://cdn.radiantmediatechs.com/rmp/5.10.3/js/rmp.min.js"></script>
+  <script src="https://cdn.radiantmediatechs.com/rmp/5.10.5/js/rmp.debug.js"></script>
   <script src="js/prod.js"></script>
 </body>
 

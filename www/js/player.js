@@ -39,6 +39,12 @@ const AVAILABLE_STREAMS = {
     adParser: 'rmp-vast',
     adTagUrl: 'https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml'
   },
+  vodDashVP9: {
+    uri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-webm-only/dash.mpd',
+    title: 'Android TV Demo App - DASH VOD VP9',
+    ads: false,
+    dash: true,
+  },
   vodDashDrm: {
     uri: 'https://media.axprod.net/TestVectors/v7-MultiDRM-SingleKey/Manifest.mpd',
     title: 'Android TV Demo App - DASH VOD with Widevine DRM',
@@ -50,6 +56,17 @@ const AVAILABLE_STREAMS = {
       'X-AxDRM-Message': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiYjMzNjRlYjUtNTFmNi00YWUzLThjOTgtMzNjZWQ1ZTMxYzc4IiwibWVzc2FnZSI6eyJ0eXBlIjoiZW50aXRsZW1lbnRfbWVzc2FnZSIsImtleXMiOlt7ImlkIjoiOWViNDA1MGQtZTQ0Yi00ODAyLTkzMmUtMjdkNzUwODNlMjY2IiwiZW5jcnlwdGVkX2tleSI6ImxLM09qSExZVzI0Y3Iya3RSNzRmbnc9PSJ9XX19.4lWwW46k-oWcah8oN18LPj5OLS5ZU-_AQv7fe0JhNjA'
     }
   },
+  vodDashDrm2: {
+    uri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd',
+    title: 'Android TV Demo App - DASH VOD with Widevine DRM Sample 2',
+    ads: false,
+    dash: true,
+    drm: true,
+    licenseDrmUri: 'https://cwip-shaka-proxy.appspot.com/header_auth',
+    licenseHeaders: {
+      'CWIP-Auth-Header': 'VGhpc0lzQVRlc3QK'
+    }
+  }
 };
 
 const PLAYER_ID = 'rmpPlayer'

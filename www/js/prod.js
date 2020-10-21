@@ -811,7 +811,7 @@ module.exports = function (it) {
 };
 
 },{"../internals/classof":27,"../internals/iterators":63,"../internals/well-known-symbol":105}],47:[function(require,module,exports){
-(function (global){
+(function (global){(function (){
 var check = function (it) {
   return it && it.Math == Math && it;
 };
@@ -826,7 +826,7 @@ module.exports =
   // eslint-disable-next-line no-new-func
   Function('return this')();
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],48:[function(require,module,exports){
 var hasOwnProperty = {}.hasOwnProperty;
 
@@ -2609,21 +2609,12 @@ const app = {
     });
     document.addEventListener('click', e => {
       window.console.log(e);
-    }); // needed when using cordova-plugin-rmpandroidtv to display in native resolution on Android TV
-
-    const metaViewportElement = document.querySelector('meta[name="viewport"]');
-
-    if (metaViewportElement !== null) {
-      const metaViewPortContent = `user-scalable=no, width=device-width, initial-scale=${1 / window.devicePixelRatio}, viewport-fit=cover`;
-      metaViewportElement.setAttribute('content', metaViewPortContent);
-    }
-
+    });
     const mainInterface = new _interface.default(true);
     mainInterface.wire();
     const playerManagement = new _player.default(true, mainInterface); // buttons for stream selection
 
-    const streamSelection = [document.getElementById('liveHls'), document.getElementById('vodHls'), document.getElementById('liveDash'), document.getElementById('vodDash'), document.getElementById('vodDashDrm'), //document.getElementById('vodHlsAdsIma'),
-    document.getElementById('vodHlsAdsRmpVast')]; // wire main buttons for stream selection
+    const streamSelection = [document.getElementById('liveHls'), document.getElementById('vodHls'), document.getElementById('liveDash'), document.getElementById('vodDash'), document.getElementById('vodDashVP9'), document.getElementById('vodDashDrm'), document.getElementById('vodDashDrm2'), document.getElementById('vodHlsAdsIma'), document.getElementById('vodHlsAdsRmpVast')]; // wire main buttons for stream selection
 
     (0, _forEach.default)(streamSelection).call(streamSelection, element => {
       element.addEventListener('click', event => {
@@ -2808,6 +2799,12 @@ const AVAILABLE_STREAMS = {
     adParser: 'rmp-vast',
     adTagUrl: 'https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml'
   },
+  vodDashVP9: {
+    uri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-webm-only/dash.mpd',
+    title: 'Android TV Demo App - DASH VOD VP9',
+    ads: false,
+    dash: true
+  },
   vodDashDrm: {
     uri: 'https://media.axprod.net/TestVectors/v7-MultiDRM-SingleKey/Manifest.mpd',
     title: 'Android TV Demo App - DASH VOD with Widevine DRM',
@@ -2817,6 +2814,17 @@ const AVAILABLE_STREAMS = {
     licenseDrmUri: 'https://drm-widevine-licensing.axtest.net/AcquireLicense',
     licenseHeaders: {
       'X-AxDRM-Message': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiYjMzNjRlYjUtNTFmNi00YWUzLThjOTgtMzNjZWQ1ZTMxYzc4IiwibWVzc2FnZSI6eyJ0eXBlIjoiZW50aXRsZW1lbnRfbWVzc2FnZSIsImtleXMiOlt7ImlkIjoiOWViNDA1MGQtZTQ0Yi00ODAyLTkzMmUtMjdkNzUwODNlMjY2IiwiZW5jcnlwdGVkX2tleSI6ImxLM09qSExZVzI0Y3Iya3RSNzRmbnc9PSJ9XX19.4lWwW46k-oWcah8oN18LPj5OLS5ZU-_AQv7fe0JhNjA'
+    }
+  },
+  vodDashDrm2: {
+    uri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd',
+    title: 'Android TV Demo App - DASH VOD with Widevine DRM Sample 2',
+    ads: false,
+    dash: true,
+    drm: true,
+    licenseDrmUri: 'https://cwip-shaka-proxy.appspot.com/header_auth',
+    licenseHeaders: {
+      'CWIP-Auth-Header': 'VGhpc0lzQVRlc3QK'
     }
   }
 };
