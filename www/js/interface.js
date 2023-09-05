@@ -1,21 +1,28 @@
 class MainInterface {
 
-  constructor(debug) {
+  constructor() {
     this.currentAElement = null;
     this.currentIndex = 0;
-    this.nullFn = function () { return null };
+    this.nullFn = function () { return null; };
     this.__onMainInterfacevKeyDown = this.nullFn;
-    this.debug = debug;
   }
 
-  _handleMainInterfaceButtons() {
-    const aElements = document.querySelectorAll('a');
+  _handleMainInterfaceButtons(type) {
+    const aElements = document.querySelectorAll('#demo-list a');
     if (!this.currentAElement) {
       this.currentAElement = aElements[this.currentIndex];
     } else {
-      this.currentIndex++;
+      if (type === 'next') {
+        this.currentIndex++;
+      } else {
+        this.currentIndex--;
+      }
       if (!aElements[this.currentIndex]) {
-        this.currentIndex = 0;
+        if (type === 'next') {
+          this.currentIndex = 0;
+        } else {
+          this.currentIndex = aElements.length - 1;
+        }
       }
       this.currentAElement = aElements[this.currentIndex];
     }
@@ -23,22 +30,16 @@ class MainInterface {
   }
 
   _onMainInterfacevKeyDown(e) {
-    if (this.debug) {
-      window.console.log(e);
-    }
     const keyCode = e.keyCode;
-    if (this.debug) {
-      window.console.log('Key code from MainInterface called: ' + keyCode);
-    }
+    // console.log('Key code from MainInterface called: ' + keyCode);
     switch (keyCode) {
       case 39: // Right arrow
+      case 40: // DOWN arrow
+        this._handleMainInterfaceButtons('next');
+        break;
       case 37: // Left arrow
       case 38: // UP arrow
-      case 40: // DOWN arrow
-        this._handleMainInterfaceButtons();
-        break;
-      case 9: // tab
-        e.preventDefault();
+        this._handleMainInterfaceButtons('previous');
         break;
       case 13: // Enter
         e.preventDefault();
@@ -46,9 +47,7 @@ class MainInterface {
           this.currentAElement.click();
           this.currentAElement.blur();
         } catch (e) {
-          if (this.debug) {
-            window.console.log(e);
-          }
+          console.log(e);
         }
         break;
     }
