@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Support for building Android TV apps with Radiant Media Player is deprecated with Radiant Media Player v9.15 and will be removed in Radiant Media Player v10.
+
 # rmp-android-tv
 
 A sample [Apache Cordova](https://cordova.apache.org/) video application for Android TV using [Radiant Media Player](https://www.radiantmediaplayer.com).
